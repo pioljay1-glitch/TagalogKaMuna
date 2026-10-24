@@ -30,7 +30,6 @@ function renderTopics() {
   const grid = document.getElementById("topics-grid");
   if (!grid) return;
 
-
   grid.innerHTML = TOPICS.map(topic => `
     <div class="bg-white rounded-2xl border border-gray-100 p-5 card-hover cursor-pointer" onclick="startTopicQuiz('${topic.id}')">
       <div class="w-11 h-11 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center mb-4">
@@ -46,7 +45,7 @@ function renderTopics() {
 }
 
 function renderLevels() {
-  const grid = document.getElementElementById("levels-grid");
+  const grid = document.getElementById("levels-grid");
   if (!grid) return;
 
   grid.innerHTML = LEVELS.map(level => `
@@ -65,7 +64,7 @@ function renderLevels() {
 
 function renderExams() {
   const grid = document.getElementById("exams-grid");
-  if (!grid if (!grid) return;
+  if (!grid) return;
 
   grid.innerHTML = EXAMS.map(exam => `
     <div class="bg-white rounded-xl border border-gray-100 p-5 card-hover cursor-pointer text-center" onclick="startExamQuiz('${exam.id}')">
@@ -85,7 +84,7 @@ function renderProgress() {
 
   container.innerHTML = `
     <div class="space-y-4">
-      ${history.slice().reverse().map(item => => `
+      ${history.slice().reverse().map(item => `
         <div class="flex items-center justify-between border-b border-gray-100 pb-3">
           <div>
             <div class="font-medium text-gray-900">${item.title}</div>
@@ -110,7 +109,6 @@ function startTopicQuiz(topicId) {
     return;
   }
 
-  // Take up to 10 questions (or all if fewer)
   const selected = shuffle([...questions]).slice(0, Math.min(10, questions.length));
   const topic = TOPICS.find(t => t.id === topicId);
 
@@ -130,7 +128,6 @@ function startLevelQuiz(levelId) {
     if (QUESTIONS[tid]) all = all.concat(QUESTIONS[tid].filter(q => q.level === levelId || levelId === "beginner"));
   });
 
-  // Fallback: take any questions if filter is too strict
   if (all.length < 5) {
     topicIds.forEach(tid => {
       if (QUESTIONS[tid]) all = all.concat(QUESTIONS[tid]);
@@ -154,8 +151,7 @@ function startLevelQuiz(levelId) {
   startQuiz();
 }
 
-function startExam softQuiz(examId) {
-  // For demo, pull mixed questions from all topics
+function startExamQuiz(examId) {
   let all = [];
   Object.values(QUESTIONS).forEach(arr => all = all.concat(arr));
 
@@ -208,7 +204,7 @@ function renderQuestion() {
 
     return `
       <button class="${classes}" onclick="selectOption(${i})" ${answered ? "disabled" : ""}>
-        <span class="inline-flex items-center gap--3">
+        <span class="inline-flex items-center gap-3">
           <span class="w-6 h-6 rounded-full border border-current flex items-center justify-center text-xs font-bold">${String.fromCharCode(65 + i)}</span>
           ${opt}
         </span>
@@ -216,7 +212,6 @@ function renderQuestion() {
     `;
   }).join("");
 
-  // Explanation
   const expl = document.getElementById("quiz-explanation");
   if (userAnswers[currentIndex] !== null) {
     expl.classList.remove("hidden");
@@ -225,7 +220,6 @@ function renderQuestion() {
     expl.classList.add("hidden");
   }
 
-  // Buttons
   document.getElementById("btn-prev").disabled = currentIndex === 0;
   const nextBtn = document.getElementById("btn-next");
   if (currentIndex === total - 1) {
@@ -270,7 +264,6 @@ function finishQuiz() {
   const total = currentQuiz.questions.length;
   const percent = Math.round((score / total) * 100);
 
-  // Save progress
   const history = JSON.parse(localStorage.getItem("knowbotic_progress") || "[]");
   history.push({
     title: currentQuiz.title,
@@ -279,9 +272,8 @@ function finishQuiz() {
     percent,
     date: new Date().toLocaleDateString("en-PH", { year: "numeric", month: "short", day: "numeric" })
   });
-  localStorage.setItem("knowbotic_progress", JSON.stringify(history.slice(-20))); // keep last 20
+  localStorage.setItem("knowbotic_progress", JSON.stringify(history.slice(-20)));
 
-  // Show result
   document.getElementById("result-score").textContent = percent + "%";
   document.getElementById("result-detail").textContent = `${score} / ${total} correct`;
 
@@ -299,7 +291,7 @@ function finishQuiz() {
     document.getElementById("result-subtitle").textContent = "Medyo okay. Subukan ulit para mas umangat.";
   } else {
     document.getElementById("result-icon").textContent = "📚";
-    document.getElementByElementById("result-title").textContent = "Kaya mo 'yan!";
+    document.getElementById("result-title").textContent = "Kaya mo 'yan!";
     document.getElementById("result-subtitle").textContent = "Review the topics and try again.";
   }
 
@@ -308,7 +300,6 @@ function finishQuiz() {
 
 function restartQuiz() {
   if (currentQuiz) {
-    // reshuffle
     currentQuiz.questions = shuffle([...currentQuiz.questions]);
     startQuiz();
   }
