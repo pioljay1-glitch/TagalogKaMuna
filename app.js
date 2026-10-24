@@ -1,4 +1,4 @@
-// Knowbotic App Logic
+// TagalogKaMuna App Logic
 
 let currentView = "home";
 let currentQuiz = null;
@@ -9,7 +9,6 @@ let score = 0;
 // ========== RENDER HELPERS ==========
 
 function showView(viewName) {
-  // Map 'topics' to home view
   if (viewName === "topics") viewName = "home";
 
   document.querySelectorAll("[id^=view-]").forEach(el => el.classList.add("hidden"));
@@ -38,7 +37,7 @@ function renderTopics() {
       <h3 class="font-bold text-gray-900 mb-1">${topic.title}</h3>
       <p class="text-sm text-gray-500 leading-relaxed">${topic.description}</p>
       <div class="mt-4 text-xs font-medium text-primary-600">
-        ${QUESTIONS[topic.id] ? QUESTIONS[topic.id].length : 0} sample questions →
+        ${QUESTIONS[topic.id] ? QUESTIONS[topic.id].length : 0} questions →
       </div>
     </div>
   `).join("");
@@ -75,7 +74,7 @@ function renderExams() {
 
 function renderProgress() {
   const container = document.getElementById("progress-content");
-  const history = JSON.parse(localStorage.getItem("knowbotic_progress") || "[]");
+  const history = JSON.parse(localStorage.getItem("tagalogkamuna_progress") || "[]");
 
   if (history.length === 0) {
     container.innerHTML = `<p class="text-gray-500 text-center">No quizzes completed yet. Start practicing!</p>`;
@@ -212,10 +211,24 @@ function renderQuestion() {
     `;
   }).join("");
 
+  // Explanation (correct + why wrong)
   const expl = document.getElementById("quiz-explanation");
   if (userAnswers[currentIndex] !== null) {
     expl.classList.remove("hidden");
-    document.getElementById("explanation-text").textContent = q.explanation || "";
+    const chosen = userAnswers[currentIndex];
+    let text = "";
+    if (chosen === q.answer) {
+      text = "✅ Tama! " + (q.explanation || "");
+    } else {
+      text = "❌ Mali. ";
+      if (q.whyWrong && q.whyWrong[chosen]) {
+        text += q.whyWrong[chosen] + " ";
+      } else {
+        text += `Ang sagot na "${q.options[chosen]}" ay hindi tama. `;
+      }
+      text += "Tamang sagot: " + (q.explanation || q.options[q.answer]);
+    }
+    document.getElementById("explanation-text").textContent = text;
   } else {
     expl.classList.add("hidden");
   }
@@ -264,7 +277,7 @@ function finishQuiz() {
   const total = currentQuiz.questions.length;
   const percent = Math.round((score / total) * 100);
 
-  const history = JSON.parse(localStorage.getItem("knowbotic_progress") || "[]");
+  const history = JSON.parse(localStorage.getItem("tagalogkamuna_progress") || "[]");
   history.push({
     title: currentQuiz.title,
     score,
@@ -272,7 +285,7 @@ function finishQuiz() {
     percent,
     date: new Date().toLocaleDateString("en-PH", { year: "numeric", month: "short", day: "numeric" })
   });
-  localStorage.setItem("knowbotic_progress", JSON.stringify(history.slice(-20)));
+  localStorage.setItem("tagalogkamuna_progress", JSON.stringify(history.slice(-20)));
 
   document.getElementById("result-score").textContent = percent + "%";
   document.getElementById("result-detail").textContent = `${score} / ${total} correct`;
