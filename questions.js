@@ -61,7 +61,7 @@ const QUESTIONS = {
   "grammar-fundamentals": [
     { q: "Alin ang tamang pangungusap?", options: ["Ako ay kumain ng mansanas.", "Ako kumain mansanas.", "Kumain ako ng mansanas ay.", "Mansanas ako kumain."], answer: 0, explanation: "Tamang ayos: Subject + ay + Verb + Object.", level: "beginner" },
     { q: "Ano ang gamit ng 'ng' sa 'Kumain ako ng tinapay'?", options: ["Pang-uri", "Object marker", "Pandiwa", "Panghalip"], answer: 1, explanation: "Ang 'ng' ay object marker.", level: "beginner" },
-    { q: "Alin ang future form ng 'kumain ste'?", options: ["Kumain", "Kakain", "Kumakain", "Kinain"], answer: 1, explanation: "'Kakain' ang future aspect.", level: "intermediate" },
+    { q: "Alin ang future form ng 'kumain'?", options: ["Kumain", "Kakain", "Kumakain", "Kinain"], answer: 1, explanation: "'Kakain' ang future aspect.", level: "intermediate" },
     { q: "Ano ang tawag sa 'ako', 'ikaw', 'siya'?", options: ["Pangngalan", "Panghalip", "Pandiwa", "Pang-uri"], answer: 1, explanation: "Ito ay mga panghalip.", level: "beginner" },
     { q: "Alin ang tamang paggamit ng 'ang'?", options: ["Kumain ang tinapay ako.", "Ang bata ay natutulog.", "Ako ang kumain tinapay.", "Natutulog bata ang."], answer: 1, explanation: "'Ang' ang subject marker.", level: "beginner" },
     { q: "Ano ang aspect ng 'kumakain'?", options: ["Completed", "Incomplete / Progressive", "Future", "Infinitive"], answer: 1, explanation: "'Kumakain' ay progressive.", level: "intermediate" },
@@ -79,7 +79,7 @@ const QUESTIONS = {
     { q: "Paano babatiin ang kaibigan sa umaga?", options: ["Magandang gabi!", "Magandang umaga!", "Tulog ka na!", "Anong oras na?"], answer: 1, explanation: "'Magandang umaga!' ang angkop.", level: "beginner" },
     { q: "Ano ang sagot sa 'Kumusta ka?'?", options: ["Aalis na ako.", "Mabuti naman, salamat!", "Wala akong pera.", "Hindi ko alam."], answer: 1, explanation: "Karaniwang sagot: 'Mabuti naman'.", level: "beginner" },
     { q: "Paano magpaalam nang magalang?", options: ["Sige, bye!", "Paalam, ingat ka!", "Aalis na ako.", "Tulog na."], answer: 1, explanation: "'Paalam, ingat ka!' ay magalang.", level: "beginner" },
-    { q: "Ano ang itatanong para sa presyo?", options: ["Saan ka pupunta?", "Magkano po ito?", "Anong oras na?", "Sino ang may-ari?"], answer: 1, explanation: "'Magkano po ito?'", level: "beginner" },
+    { q: "Ano ang itatanong para sa presyo?", options: ["Saan ka pupunta?", "Magkano po ito?", "Anong oras na?", "Sino ang may-ari?"], answer: 1, explanation: "'Magkano po ito?'", level: "begin ind" },
     { q: "Paano magpasalamat nang mainit?", options: ["Sige.", "Maraming salamat po!", "Okay lang.", "Walang anuman."], answer: 1, explanation: "'Maraming salamat po' ay mainit.", level: "beginner" },
     { q: "Ano ang sasabihin kung hindi naintindihan?", options: ["Ulitin mo nga?", "Pakiulit po?", "Hindi ako interesado.", "Sige na."], answer: 1, explanation: "'Pakiulit po' ang magalang.", level: "intermediate" },
     { q: "Paano mag-alok ng tulong?", options: ["Wala akong oras.", "Kailangan mo ba ng tulong?", "Gawin mo na lang.", "Hindi ko kaya."], answer: 1, explanation: "'Kailangan mo ba ng tulong?'", level: "beginner" },
@@ -91,7 +91,7 @@ const QUESTIONS = {
   ],
   "cultural": [
     { q: "Ano ang 'po' at 'opo'?", options: ["Pagkain", "Salitang paggalang", "Sayaw", "Laro"], answer: 1, explanation: "Ginagamit upang magpakita ng respeto.", level: "beginner" },
-    { q: "Ano ang 'Mano po'?", options: ["Pagbati sa nakatatanda sa pamamagitan ng kamay", "Sayaw", "Pagkain", "Laro"], answer: 0, explanation: "Tradisyonal na paggalang sa nakatatanda.", level: "beginner" },
+    { q: "Ano ang 'Mano po'?", options: ["Pagbati sa nakatatanda sa sa pamamagitan ng kamay", "Sayaw", "Pagkain", "Laro"], answer: 0, explanation: "Tradisyonal na paggalang sa nakatatanda.", level: "beginner" },
     { q: "Kailan karaniwang may lechon?", options: ["Araw-araw", "Pista o espesyal na okasyon", "Libing", "Pasok sa eskwela"], answer: 1, explanation: "Lechon sa mga espesyal na selebrasyon.", level: "beginner" },
     { q: "Ano ang 'Bayanihan'?", options: ["Sayaw", "Diwa ng pagtutulungan", "Pagkain", "Relihiyon"], answer: 1, explanation: "Espiritu ng sama-samang pagtulong.", level: "intermediate" },
     { q: "Ano ang ginagawa sa Undas?", options: ["Pagsasayaw", "Pagbisita sa libingan", "Kaarawan", "Basketball"], answer: 1, explanation: "Pag-alala sa yumao.", level: "beginner" },
@@ -144,7 +144,7 @@ const QUESTIONS = {
     { q: "Ano ang tamang bigkas ng 'ngipin'?", options: ["ngí-pin", "ngi-pín", "ngip-in", "n-gipin"], answer: 0, explanation: "Diin sa unang pantig.", level: "intermediate" }
   ],
   "listening": [
-    { q: "Kung narinig mo ang 'Magandang umaga, kumusta ka na?', ano ang angkop na sagot?", options: ["Magandang gabi.", "Mabuti naman, salamat!", "Paalam.", "Anong oras na?"], answer: 1, explanation: "Karaniwang tugon sa pagbati.", level: "beginner" },
+    { q: "Kung narinig mo ang 'Magandang umaga, kumusta ka na?', ano ang angkop na sagot?", options: ["Magandang gabi.", "Mabuti naman, salamat!", "Paalam.", "Anong oras na?"], answer: 1, explanation: "Karaniwangang tugon sa pagbati.", level: "beginner" },
     { q: "Ano ang ibig sabihin ng 'Ingat ka'?", options: ["Salamat", "Take care", "Paalam lang", "Kumusta"], answer: 1, explanation: "Take care / be careful.", level: "beginner" }
   ],
   "exam-prep": [
