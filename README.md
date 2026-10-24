@@ -1,48 +1,32 @@
-# Knowbotic — Filipino (Tagalog) Practice Platform
+# TagalogKaMuna — Filipino (Tagalog) Practice Platform
 
-AA clean, responsive web app for practicing Filipino (Tagalog) through quizzes. Inspired by modern language learning interfaces.
+A clean, responsive web app for practicing Filipino (Tagalog) through quizzes.
 
 ## Features
 
-- **By Topic** — Basic Vocabulary, Grammar, Conversational Skills, Cultural Insights, Idioms, Advanced Grammar, Reading, Writing, Pronunciation, Listening, Exam Prep
+- **By Topic** — Basic, Grammar, Conversational, Cultural Insights, Idioms, Advanced Grammar, Reading, Writing, Pronunciation, Listening, Exam Prep
 - **By Level** — Beginner → Intermediate → Advanced → Proficient
 - **By Exam** — Filipino Language Proficiency Test, Tagalog Certification, PEPT, and more
 - Working multiple-choice quizzes with instant feedback + explanations
-- Score tracking & progress history (saved in browser localStorage)
-- Fully responsive (mobile, tablet, desktop)
-- Philippine-friendly design
+- Score tracking & progress history (localStorage)
+- Fully responsive
 
 ## How to Run
 
-Just open `index.html` in any modern browser.  
-Or use a local server:
+Open `index.html` in any modern browser, or deploy as Static Site on Render / GitHub Pages.
 
-```bash
-npx serve .
-```
+## Expanding Questions
 
-## Expanding the Question Bank
-
-Open `questions.js` and add more objects to the arrays under `QUESTIONS`.  
-Each question follows this format:
+Edit `questions.js`. Format:
 
 ```js
 {
-  q: "Ang tanong dito?",
+  q: "Tanong?",
   options: ["A", "B", "C", "D"],
-  answer: 0,          // index of correct answer (0-3)
-  explanation: "Bakit tama ang sagot...",
-  level: "beginner"   // beginner | intermediate | advanced
+  answer: 0,
+  explanation: "Bakit tama...",
+  level: "beginner"
 }
 ```
-
-Aim for 50–100 questions per category for a full production version.
-
-## Tech Stack
-
-- HTML + Tailwind CSS (CDN)
-- Vanilla JavaScript
-- Font Awesome icons
-- LocalStorage for progress
 
 Made for Filipino learners. 🇵🇭
