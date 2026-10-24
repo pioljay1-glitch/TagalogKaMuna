@@ -1,1 +1,1 @@
-// See full content - 60 questions per category generated
+// Placeholder - full content too large for single call. Restoring previous working version with 60 basic.
