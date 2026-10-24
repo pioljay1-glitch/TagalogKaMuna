@@ -40,7 +40,7 @@ const QUESTIONS = {
     { q: "Ano ang ibig sabihin ng 'maganda'?", options: ["Mabait", "Beautiful", "Mabilis", "Malaki"], answer: 1, explanation: "'Maganda' ang adjective para sa beautiful.", level: "beginner" },
     { q: "Ano ang Tagalog ng 'friend'?", options: ["Kaibigan", "Kapatid", "Kapitbahay", "Kamag-anak"], answer: 0, explanation: "'Kaibigan' ang salita para sa friend.", level: "beginner" },
     { q: "Alin ang hindi pagkain?", options: ["Kanin", "Isda", "Kotse", "Gulay"], answer: 2, explanation: "'Kotse' ay sasakyan, hindi pagkain.", level: "beginner" },
-    { q: "Ano ang ibig sabihin ng 'umaga'?", options: options: ["Gabi", "Hapon", "Morning", "Tanghali"], answer: 2, explanation: "'Umaga' ay morning.", level: "beginner" },
+    { q: "Ano ang ibig sabihin ng 'umaga'?", options: ["Gabi", "Hapon", "Morning", "Tanghali"], answer: 2, explanation: "'Umaga' ay morning.", level: "beginner" },
     { q: "Ano ang Tagalog ng 'book'?", options: ["Papel", "Aklat / Libro", "Lamesa", "Silya"], answer: 1, explanation: "'Aklat' o 'Libro' ang ginagamit para sa book.", level: "beginner" },
     { q: "Ano ang tawag sa 'teacher'?", options: ["Doktor", "Guro / Titser", "Abogado", "Magsasaka"], answer: 1, explanation: "'Guro' ang pormal na salita.", level: "beginner" },
     { q: "Ano ang Tagalog ng 'rice' (cooked)?", options: ["Bigas", "Kanin", "Tinapay", "Gulay"], answer: 1, explanation: "'Kanin' ang cooked rice; 'bigas' ang uncooked.", level: "beginner" },
@@ -61,7 +61,7 @@ const QUESTIONS = {
   "grammar-fundamentals": [
     { q: "Alin ang tamang pangungusap?", options: ["Ako ay kumain ng mansanas.", "Ako kumain mansanas.", "Kumain ako ng mansanas ay.", "Mansanas ako kumain."], answer: 0, explanation: "Tamang ayos: Subject + ay + Verb + Object.", level: "beginner" },
     { q: "Ano ang gamit ng 'ng' sa 'Kumain ako ng tinapay'?", options: ["Pang-uri", "Object marker", "Pandiwa", "Panghalip"], answer: 1, explanation: "Ang 'ng' ay object marker.", level: "beginner" },
-    { q: "Alin ang future form ng 'kumain'?", options: ["Kumain", "Kakain", "Kumakain", "Kinain"], answer: 1, explanation: "'Kakain' ang future aspect.", level: "intermediate" },
+    { q: "Alin ang future form ng 'kumain ste'?", options: ["Kumain", "Kakain", "Kumakain", "Kinain"], answer: 1, explanation: "'Kakain' ang future aspect.", level: "intermediate" },
     { q: "Ano ang tawag sa 'ako', 'ikaw', 'siya'?", options: ["Pangngalan", "Panghalip", "Pandiwa", "Pang-uri"], answer: 1, explanation: "Ito ay mga panghalip.", level: "beginner" },
     { q: "Alin ang tamang paggamit ng 'ang'?", options: ["Kumain ang tinapay ako.", "Ang bata ay natutulog.", "Ako ang kumain tinapay.", "Natutulog bata ang."], answer: 1, explanation: "'Ang' ang subject marker.", level: "beginner" },
     { q: "Ano ang aspect ng 'kumakain'?", options: ["Completed", "Incomplete / Progressive", "Future", "Infinitive"], answer: 1, explanation: "'Kumakain' ay progressive.", level: "intermediate" },
@@ -72,7 +72,7 @@ const QUESTIONS = {
     { q: "Alin ang tamang past form?", options: ["Kumakain ako kahapon.", "Kumain ako kahapon.", "Kakain ako kahapon.", "Kain ako kahapon."], answer: 1, explanation: "Past/completed: 'kumain'.", level: "beginner" },
     { q: "Ano ang gamit ng 'ay' sa 'Ako ay guro'?", options: ["Object marker", "Inversion marker / Linker", "Verb", "Adjective"], answer: 1, explanation: "'Ay' ay ginagamit sa inversion o formal structure.", level: "intermediate" },
     { q: "Alin ang tamang plural?", options: ["Ang mga bata ay naglalaro.", "Ang bata ay naglalaro.", "Ang mga bata ay naglalaro ay.", "Bata ang mga naglalaro."], answer: 0, explanation: "'Mga' ang plural marker.", level: "beginner" },
-    { q: "Ano ang bel ang difference ng 'si' at 'ang'?", options: ["Walang difference", "'Si' para sa personal names, 'ang' para sa common nouns", "'Si' ay verb", "'Ang' ay pangalan"], answer: 1, explanation: "'Si' para sa proper names ng tao.", level: "intermediate" },
+    { q: "Ano ang difference ng 'si' at 'ang'?", options: ["Walang difference", "'Si' para sa personal names, 'ang' para sa common nouns", "'Si' ay verb", "'Ang' ay pangalan"], answer: 1, explanation: "'Si' para sa proper names ng tao.", level: "intermediate" },
     { q: "Alin ang tamang actor-focus?", options: ["Binasa ang libro.", "Bumasa siya ng libro.", "Basahin ang libro.", "Pinabasa ang libro."], answer: 1, explanation: "'Bumasa' ay actor-focus.", level: "advanced" }
   ],
   "conversational": [
