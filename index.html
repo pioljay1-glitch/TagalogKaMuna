@@ -44,7 +44,7 @@
     .quiz-option.wrong { border-color: #dc2626; background: #fef2f2; }
     .progress-bar { transition: width 0.4s ease; }
     .fade-in { animation: fadeIn 0.3s ease; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(8 8px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body class="bg-[#FDF8F3] text-gray-800 min-h-screen">
@@ -68,7 +68,7 @@
         </div>
         <button onclick="showView('progress')" class="hover:text-white/80 transition">My Progress</button>
       </nav>
-      <div class="w-99 h-9 bg-white text-brand-purple rounded-full flex items-center justify-center font-bold text-sm">
+      <div class="w-9 h-9 bg-white text-brand-purple rounded-full flex items-center justify-center font-bold text-sm">
         J
       </div>
     </div>
@@ -126,7 +126,7 @@
       <div class="flex flex-wrap justify-center gap-2 mb-8">
         <button onclick="showView('topics')" class="px-4 py-2 rounded-full bg-white border border-gray-200 text-gray-700 text-sm font-medium hover:bg-gray-50">By Topic</button>
         <button onclick="showView('levels')" class="px-4 py-2 rounded-full bg-white border border-gray-200 text-gray-700 text-sm font-medium hover:bg-gray-50">By Level</button>
-        <button onclick="showView('exams')" class="px-4 py-2 rounded-full bg-primary-600 text-white text-sm font-medium">By Exam</button>
+        <button onclick="showView('exams')" class="px-4 py-2 rounded--full bg-primary-600 text-white text-sm font-medium">By Exam</button>
       </div>
       <div id="exams-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
       <p class="text-center text-sm text-gray-500 mt-8">
@@ -137,7 +137,6 @@
     <!-- QUIZ VIEW -->
     <div id="view-quiz" class="hidden fade-in">
       <div class="max-w-2xl mx-auto">
-        <!-- Quiz Header -->
         <div class="flex items-center justify-between mb-6">
           <button onclick="exitQuiz()" class="text-sm text-gray-500 hover:text-gray-800 flex items-center gap-1">
             <i class="fa-solid fa-arrow-left"></i> Back
@@ -146,25 +145,21 @@
           <div class="text-sm font-semibold text-primary-700" id="quiz-progress-text">1 / 10</div>
         </div>
 
-        <!-- Progress Bar -->
         <div class="w-full h-2 bg-gray-200 rounded-full mb-8 overflow-hidden">
           <div id="quiz-progress-bar" class="h-full bg-primary-600 progress-bar rounded-full" style="width: 10%"></div>
         </div>
 
-        <!-- Question Card -->
         <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 mb-6">
           <div class="text-xs font-semibold text-primary-600 mb-2 uppercase tracking-wide" id="quiz-difficulty">Beginner</div>
           <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-6 leading-snug" id="quiz-question">Loading...</h2>
           <div id="quiz-options" class="space-y-3"></div>
         </div>
 
-        <!-- Explanation (hidden until answered) -->
         <div id="quiz-explanation" class="hidden bg-blue-50 border border-blue-100 rounded-xl p-4 mb-6 text-sm text-blue-900">
           <strong class="block mb-1">Explanation</strong>
           <span id="explanation-text"></span>
         </div>
 
-        <!-- Navigation -->
         <div class="flex justify-between items-center">
           <button id="btn-prev" onclick="prevQuestion()" class="px-5 py-2.5 rounded-xl border border-gray-200 text-sm font-medium text-gray-600 hover:bg-gray-50 disabled:opacity-40" disabled>
             Previous
@@ -172,6 +167,7 @@
           <button id="btn-next" onclick="nextQuestion()" class="px-6 py-2.5 rounded-xl bg-primary-600 text-white text-sm font-semibold hover:bg-primary-700 disabled:opacity-50" disabled>
             Next
           </button>
+        </
         </div>
       </div>
     </div>
@@ -212,7 +208,6 @@
 
   </main>
 
-  <!-- Footer -->
   <footer class="border-t border-gray-200 mt-16 py-8 text-center text-sm text-gray-400">
     <p>Knowbotic — Filipino (Tagalog) Practice Platform</p>
     <p class="mt-1">Made with ❤️ for Filipino learners</p>
